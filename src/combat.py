@@ -35,12 +35,35 @@ def is_mg_alive(squad):
 			return_val = True
 
 
+def spotting(Soldier_inf):
+	exp = Soldier_inf.experience_int
+	chance = random.randint(0,100)
+	if chance < exp:
+		return True
+
+def reload(Soldier_inf):
+	pass
+
+def has_ammo(Soldier_inf):
+	return True
 
 def attacking(squad1, squad2):
-	#Spotting
-	#Firing
-	#Reloading
-	pass
+	soldier = random.choice(squad1)
+	attack = spotting(soldier)
+	if attack:
+		print(soldier.name + " the " + soldier.experience_str + " " + soldier.role + " Has Spotted an enemy!")
+		soldier.experience_int += 1
+		enemy = random.choice(squad2)
+	else:
+		cool_text("...")
+		print("")
+	if has_ammo:
+		print(soldier.name + " the " + soldier.experience_str + " " + soldier.role + " is firing upon the enemy!")
+		hit_chance = random.randint(0,100)
+		if soldier.experience_int / 2 > hit_chance:
+			print(soldier.name + " the " + soldier.experience_str + " " + soldier.role + " has hit his target!")
+		else:
+			print(soldier.name + " the " + soldier.experience_str + " " + soldier.role + " has missed his target!")
 
 def defending(squad1,squad2):
 	#Spotting
@@ -81,8 +104,10 @@ def combat(squad1, squad2, date):
 	while not is_squad_dead(squad1) and not is_squad_dead(squad2):
 		if count % 2 == 0:
 			attacking(starting_squad,ending_squad)
+			sleep_seconds(5)
 			count += 1
 		else:
 			attacking(ending_squad,starting_squad)
+			sleep_seconds(5)
 			count += 1
 		sleep_seconds(1)

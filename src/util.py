@@ -37,7 +37,7 @@ def print_squad_v(squad):
 
 def print_squad(squad):
     for Soldier_inf in squad:
-        print(Soldier_inf.name + " - " + Soldier_inf.role + " - " + Soldier_inf.weapon.name)
+        print(Soldier_inf.name + " - " + Soldier_inf.role + " - " + Soldier_inf.weapon.name + " [" +  str(Soldier_inf.experience_int) + "]")
 
 def print_squad_leader(squadList):
     print("Officer: " + squadList[0].name)
