@@ -26,14 +26,25 @@ def is_squad_dead(squad):
 
 def is_soldier_dead(Soldier_inf):
 	return Soldier_inf.dead
-1
-def spotting(Soldier_inf):
+
+
+def is_mg_alive(squad):
+	return_val = False
+	for Soldier_inf in squad:
+		if Soldier_inf.role == "Machine Gunner" and not is_soldier_dead(Soldier_inf):
+			return_val = True
+
+
+
+def attacking(squad1, squad2):
+	#Spotting
+	#Firing
+	#Reloading
 	pass
 
-def shooting(Soldier_inf):
-	pass
-
-def reloading(Soldier_inf, ammo, total_ammo):
+def defending(squad1,squad2):
+	#Spotting
+	#Reaction to attack
 	pass
 
 def combat(squad1, squad2, date):
@@ -64,3 +75,14 @@ def combat(squad1, squad2, date):
 	print_date_c(date)
 	print("")
 	sleep_seconds(1)
+
+	count = 0
+
+	while not is_squad_dead(squad1) and not is_squad_dead(squad2):
+		if count % 2 == 0:
+			attacking(starting_squad,ending_squad)
+			count += 1
+		else:
+			attacking(ending_squad,starting_squad)
+			count += 1
+		sleep_seconds(1)
