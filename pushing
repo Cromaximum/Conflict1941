@@ -1,6 +1,6 @@
-git init
+git init #First time only
 git add .
 git commit -m "Comments"
-git remote add origin URL
-git remote -v
+git remote add origin URL #First time only
+git remote -v #First time only
 git push origin master
