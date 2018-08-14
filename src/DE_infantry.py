@@ -1,5 +1,6 @@
 # coding=utf-8
-from util import *
+from soldier_inf import *
+from weapon import *
 
 DE_first_names = ['Ernst', 'Friedrich', 'Hans', 'Heinrich', 'Hermann', 'Karl', 'Otto', 'Paul', 'Walter', 'Wilhelm', 'Gerhard', 'Günter', 'Hans', 'Heinz', 'Helmut', 'Herbert', 'Karl', 'Kurt', 'Walter', 'Werner', 'Dieter', 'Günter', 'Hans', 'Horst', 'Jürgen', 'Klaus', 'Manfred', 'Peter', 'Uwe', 'Wolfgang']
 
@@ -7,29 +8,7 @@ DE_last_names = ['Müller', 'Schmidt', 'Meyer', 'Schneider', 'Fischer', 'Weber',
 
 DE_inf_squad = ['Squad Leader', 'Assistant Squad Leader', 'Rifleman', 'Machine Gunner', 'Assistant Gunner', 'Ammunition Carrier']
 
-# GERMAN WEAPONS
-
-class Karabiner_98K(weapon):
-    name = "Karabiner 98K"
-    clip_size = 5
-    max_range = 400
-
-class Walther_P38(weapon):
-    name = "Walther P38"
-    clip_size = 0
-    max_range = 50
-
-class MP_41(weapon):
-    name = "MP 41"
-    clip_size = 0
-    max_range = 200
-
-class MG_34(weapon):
-    name = "MG 34"
-    clip_size = 0
-    max_range = 800
-
-class Squad_Leader_DE(Soldier_inf):
+class Squad_Leader_DE(Soldier):
     weapon = MP_41()
     rank = ""
     primary_weapon = ""
@@ -37,7 +16,7 @@ class Squad_Leader_DE(Soldier_inf):
     ammo_types = []
     ammo_quantities = [128,0]
 
-class Assistant_Squad_Leader_DE(Soldier_inf):
+class Assistant_Squad_Leader_DE(Soldier):
     weapon = Karabiner_98K()
     rank = ""
     primary_weapon = ""
@@ -45,7 +24,7 @@ class Assistant_Squad_Leader_DE(Soldier_inf):
     ammo_types = []
     ammo_quantities = [40,0]
 
-class Rifleman_DE(Soldier_inf):
+class Rifleman_DE(Soldier):
     weapon = Karabiner_98K()
     rank = ""
     primary_weapon = ""
@@ -53,7 +32,7 @@ class Rifleman_DE(Soldier_inf):
     ammo_types = []
     ammo_quantities = [40,0]
 
-class Machine_Gunner_DE(Soldier_inf):
+class Machine_Gunner_DE(Soldier):
     weapon = MG_34()
     rank = ""
     primary_weapon = ""
@@ -61,7 +40,7 @@ class Machine_Gunner_DE(Soldier_inf):
     ammo_types = []
     ammo_quantities = [300,0]
 
-class Assistant_Gunner_DE(Soldier_inf):
+class Assistant_Gunner_DE(Soldier):
     weapon = Walther_P38()
     rank = ""
     primary_weapon = ""
@@ -69,7 +48,7 @@ class Assistant_Gunner_DE(Soldier_inf):
     ammo_types = []
     ammo_quantities = [40,0]
 
-class Ammunition_Carrier_DE(Soldier_inf):
+class Ammunition_Carrier_DE(Soldier):
     weapon = Karabiner_98K()
     rank = ""
     primary_weapon = ""
@@ -78,7 +57,7 @@ class Ammunition_Carrier_DE(Soldier_inf):
     ammo_quantities = [40,0]
 
 def create_new_Soldier_DE(role):
-    de_soldier = Soldier_inf(role)
+    de_soldier = Soldier(role)
     if(role == 'Squad Leader'):
     	de_soldier = Squad_Leader_DE(role)
     if(role == 'Assistant Squad Leader'):
@@ -91,7 +70,7 @@ def create_new_Soldier_DE(role):
     	de_soldier = Assistant_Gunner_DE(role)
     if(role == 'Ammunition Carrier'):
     	de_soldier = Ammunition_Carrier_DE(role)
-    de_soldier.name = random.choice(DE_first_names) + " " + random.choice(DE_last_names)
+    de_soldier.name = random_name(DE_first_names,DE_first_names)
     set_random_age(de_soldier, de_soldier.role)
     experience(random_experience(),de_soldier.age,de_soldier)
     set_weapon_condition(de_soldier)

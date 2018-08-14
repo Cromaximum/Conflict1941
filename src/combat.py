@@ -1,5 +1,4 @@
-from DE_infantry import *
-from RU_infantry import *
+from inf_squad import *
 
 #False = squad2 starts
 #True = squad1 starts

@@ -1,16 +1,14 @@
-from util import *
-from DE_infantry import *
-from RU_infantry import *
-from combat import *
+# coding=utf-8
+from world import *
 
-squad1 = create_new_squad_DE()
-squad2 = create_new_squad_RU()
-Date = date()
-random_starting_date(Date)
-print("")
-cool_text("Squad Combat 1941")
-print("")
-cool_text("-----------------")
+print("COMPILED")
+
+squad_1_DE = create_new_squad_DE()
+
+print_squad(squad_1_DE)
+
 print("")
 
-combat(squad1,squad2,Date)
+squad_1_RU = create_new_squad_RU()
+
+print_squad(squad_1_RU)
