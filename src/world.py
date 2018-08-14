@@ -1,5 +1,4 @@
-from combat import *
-from inf_squad import *
+from company import *
 
 class world():
 	pass

@@ -1,14 +1,24 @@
 # coding=utf-8
 from world import *
 
-print("COMPILED")
+def print_test_squad_DE():
+	print_squad(create_new_squad_DE())
 
-squad_1_DE = create_new_squad_DE()
+def print_test_squad_RU():
+	print_squad(create_new_squad_RU())
 
-print_squad(squad_1_DE)
+def print_test_platoon_DE():
+	print_platoon(create_new_platoon_DE())
 
-print("")
+def print_test_platoon_RU():
+	print_platoon(create_new_platoon_RU())
 
-squad_1_RU = create_new_squad_RU()
+def print_company_DE():
+	#2 Platoons
+	pass
 
-print_squad(squad_1_RU)
+def print_company_RU():
+	#2 Platoons
+	pass
+
+print_test_platoon_DE()

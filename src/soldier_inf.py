@@ -4,17 +4,17 @@ import random
 class Soldier:
     def __init__(self,role):
         self.role = role
-    name = ""
-    age = ""
-    rank = ""
-    weapon = weapon()
+    name = None
+    age = None
+    rank = None
+    weapon = None
     fatigue = 100
-    fatigue_gain_rate = 1
+    fatigue_gain_rate = None
     health = 10
-    experience_str = ""
-    experience_int = 0
-    condition_str = ""
-    condition_int = 0
+    experience_str = None
+    experience_int = None
+    condition_str = None
+    condition_int = None
     dead = False
 
 def random_name(list1,list2):

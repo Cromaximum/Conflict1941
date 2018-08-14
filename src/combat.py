@@ -1,4 +1,4 @@
-from inf_squad import *
+from platoon import *
 
 #False = squad2 starts
 #True = squad1 starts

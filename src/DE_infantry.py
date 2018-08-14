@@ -90,15 +90,5 @@ def create_new_squad_DE():
     Machine_Gunner = create_new_Soldier_DE(DE_inf_squad[3])
     Assistant_Gunner = create_new_Soldier_DE(DE_inf_squad[4])
     Ammunition_Carrier = create_new_Soldier_DE(DE_inf_squad[5])
-    squadList.append(Squad_Leader)
-    squadList.append(Assistant_Squad_Leader)
-    squadList.append(Rifleman_1)
-    squadList.append(Rifleman_2)
-    squadList.append(Rifleman_3)
-    squadList.append(Rifleman_4)
-    squadList.append(Rifleman_5)
-    squadList.append(Rifleman_6)
-    squadList.append(Machine_Gunner)
-    squadList.append(Assistant_Gunner)
-    squadList.append(Ammunition_Carrier)
+    squadList = [Squad_Leader,Assistant_Squad_Leader,Rifleman_1,Rifleman_2,Rifleman_3,Rifleman_4,Rifleman_5,Rifleman_6,Machine_Gunner,Ammunition_Carrier]
     return squadList
