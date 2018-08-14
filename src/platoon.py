@@ -10,12 +10,10 @@ class platoon:
 	squads = None
 
 class platoon_DE(platoon):
-	name = "test"
-	#TODO Add Other Platoon Roles
+	pass
 
 class platoon_RU(platoon):
-	name = "test"
-	#TODO Add Other Platoon Roles
+	pass
 
 def create_new_platoon_DE():
 	platoon_ = platoon("Germany")
@@ -26,7 +24,6 @@ def create_new_platoon_DE():
 	return platoon_
 
 def create_new_platoon_RU():
-	platoon_list = []
 	platoon_ = platoon("Russia")
 	platoon_.name = "RU PLATOON"
 	platoon_.collective_health_int = 10
